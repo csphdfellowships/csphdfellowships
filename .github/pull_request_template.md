@@ -6,6 +6,10 @@
 
 - **Deadline**:
 
-- **Industry or Funding Agency**
+- **Name of the Organization offering the Fellowship**:
+
+- **Industry or University or Funding Agency or Other**:
+
+- **Citizenship Requirement**:
 
 - **Additional Comments (Optional)**: 
