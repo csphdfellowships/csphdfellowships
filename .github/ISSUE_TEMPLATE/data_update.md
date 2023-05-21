@@ -14,6 +14,8 @@ assignees: sharad1126
 
 - **Link to the Fellowship**: 
 
+- **Country (if specific to a particular country/region)** (Enter 'all' if open to all countries)
+
 - **Fellowship Amount**:
 
 - **Deadline**:
