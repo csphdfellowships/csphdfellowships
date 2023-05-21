@@ -1,6 +1,6 @@
 # CSPhdFellowships
 
-[`CSPhdFellowships`](https://csphdfellowships.github.io) (https://csphdfellowships.github.io) is a collection of fellowships available to Computer Science Graduate/Doctoral/Ph.D. students across the globe.
+[`CSPhdFellowships`](https://csphdfellowships.org) (https://csphdfellowships.org) is a collection of fellowships available to Computer Science Graduate/Doctoral/Ph.D. students across the globe.
 
 **We wish you the best with your Fellowship applications.**
 
@@ -11,7 +11,7 @@
 ### Add a Fellowship 
 
 #### Option 1
-The fastest way to add or update the data is by **editing** [`fellowships.csv`](https://csphdfellowships/csphdfellowships.github.io/edit/main/fellowships.csv) and submit a pull request. The fellowships data are stored as rows in `fellowships.csv` in the format of
+The fastest way to add or update the data is by **editing** [`fellowships.csv`](https://csphdfellowships/csphdfellowships/edit/main/fellowships.csv) and submit a pull request. The fellowships data are stored as rows in `fellowships.csv` in the format of
 
 > ```"<Fellowship Name (Optional Notes)>", <Link To Fellowship>, <Fellowship Amount>, <Deadline>, <Name of the Organization>, <University or Industry or Funding Agency or Other>, <Citizenship Requirement>```
 
@@ -22,19 +22,19 @@ To add a new fellowship, please add a new row to the fellowships.csv; to update 
 Submit a pull request with your updates. We will review your pull request and merge it if everything looks good.
 
 #### Option 2
-Alternatively, you can also [submit this Google Form](https://forms.gle/vvbjCBF28vRfiNQQ8) or [create an issue](https://github.com/csphdfellowships/csphdfellowships.github.io/issues/new/choose) with the above information and we will add the data for you.
+Alternatively, you can also [submit this Google Form](https://forms.gle/vvbjCBF28vRfiNQQ8) or [create an issue](https://github.com/csphdfellowships/csphdfellowships/issues/new/choose) with the above information and we will add the data for you.
 
 ## To Raise Issues or Comments
 
 We believe issues and comments should be discussed and resolved publicly on GitHub for transparency. 
 **If you believe any data is inaccurate or have additional comments,
-please open an [issue](https://github.com/csphdfellowships/csphdfellowships.github.io/issues/new/choose) or a [pull request](https://github.com/csphdfellowships/csphdfellowships.github.io/pulls).**
+please open an [issue](https://github.com/csphdfellowships/csphdfellowships/issues/new/choose) or a [pull request](https://github.com/csphdfellowships/csphdfellowships/pulls).**
 
 **The maintainers will <i>not</i> respond to private messages sent to their personal accounts regarding this website.**  
   
 ## License
 Frontend (i.e., CSS and HTML) of this website is based on code licensed from [CSRankings](https://github.com/emeryberger/CSrankings) by [Emery Berger](https://emeryberger.com/). 
-Data and non-CSRankings code in this repository is owned by its [contributors](https://github.com/csphdfellowships/csphdfellowships.github.io/contributors), and licensed under the [Attribution-NonCommercial-NoDerivatives](https://creativecommons.org/licenses/by-nc-nd/4.0/) license. See `LICENSE` for details.
+Data and non-CSRankings code in this repository is owned by its [contributors](https://github.com/csphdfellowships/csphdfellowships/contributors), and licensed under the [Attribution-NonCommercial-NoDerivatives](https://creativecommons.org/licenses/by-nc-nd/4.0/) license. See `LICENSE` for details.
 
 ## Disclaimer
 CSPhdFellowships is designed to provide an easy access to a list of Computer Science PhD fellowships available to graduate students, based on user-submitted information. We try our best to verify their accuracy, but we cannot guarantee they are correct or up-to-date. We hope you find this information useful and wish you the best for your applications. We advocate users to do their own research before making life decisions.
