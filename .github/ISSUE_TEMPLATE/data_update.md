@@ -18,8 +18,10 @@ assignees: sharad1126
 
 - **Deadline**:
 
-- **Name of the Organization/Company/Funding Agency offering the Fellowship**:
+- **Name of the Organization offering the Fellowship**:
 
-- **Industry or Funding Agency or Other**: 
+- **Industry or University or Funding Agency or Other**: 
+
+- **Citizenship Requirement**
 
 - **Additional Comments (Optional)**: 
