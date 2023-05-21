@@ -33,8 +33,8 @@ please open an [issue](https://github.com/csphdfellowships/csphdfellowships/issu
 **The maintainers will <i>not</i> respond to private messages sent to their personal accounts regarding this website.**  
   
 ## License
-Frontend (i.e., CSS and HTML) of this website is based on code licensed from [CSRankings](https://github.com/emeryberger/CSrankings) by [Emery Berger](https://emeryberger.com/). 
-Data and non-CSRankings code in this repository is owned by its [contributors](https://github.com/csphdfellowships/csphdfellowships/contributors), and licensed under the [Attribution-NonCommercial-NoDerivatives](https://creativecommons.org/licenses/by-nc-nd/4.0/) license. See `LICENSE` for details.
+The code of this website is based on code licensed from [CSRankings](https://github.com/emeryberger/CSrankings) by [Emery Berger](https://emeryberger.com/) and [CSStipendRankings](https://github.com/CSStipendRankings/CSStipendRankings).
+Data and non-CSRankings and non-CSStipendRankings code in this repository is owned by its [contributors](https://github.com/csphdfellowships/csphdfellowships/contributors), and licensed under the [Attribution-NonCommercial-NoDerivatives](https://creativecommons.org/licenses/by-nc-nd/4.0/) license. See `LICENSE` for details.
 
 ## Disclaimer
 CSPhdFellowships is designed to provide an easy access to a list of Computer Science PhD fellowships available to graduate students, based on user-submitted information. We try our best to verify their accuracy, but we cannot guarantee they are correct or up-to-date. We hope you find this information useful and wish you the best for your applications. We advocate users to do their own research before making life decisions.
