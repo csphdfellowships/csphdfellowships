@@ -1,0 +1,390 @@
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML//EN">
+<html>
+
+<head>
+
+  <link rel="preload" as="style" href="css/csrankings.css">
+  <link rel="preload" as="style" href="css/csrankings-extra.css">
+
+  <link rel="preconnect" href="https://www.google-analytics.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link rel="preconnect" href="https://connect.facebook.net">
+  <link rel="preconnect" href="https://www.facebook.com">
+  <link rel="preconnect" href="https://dblp.org">
+
+
+  <link rel="preload" as="script" href="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.4/jquery.js"
+    type="text/javascript">
+  <link rel="preload" as="script" href="https://cdnjs.cloudflare.com/ajax/libs/jquery-csv/1.0.21/jquery.csv.js"
+    type="text/javascript">
+
+  <meta name="description" content="Computer Science PhD Stipend Rankings">
+  <meta name="keywords"
+    content="computer science fellowships, computer science doctoral fellowships, best computer science fellowships, best computer science PhD fellowships, top computer science graduate fellowships">
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="citation_title" content="CSRankings">
+  <meta name="citation_author" content="Berger, Emery D.">
+  <meta name="citation_publication_date" content="2020">
+  <meta name="citation_fulltext_html_url" content="https://csrankings.org">
+  <meta name="citation_publisher" content="">
+  <meta name="citation_fulltext_world_readable" content="">
+
+  <link rel="stylesheet" href="css/csrankings.css">
+  <link rel="stylesheet" href="css/csrankings-extra.css">
+
+  <title>CSPhDFellowships: CS PhD Fellowships</title>
+
+  <style type="text/css">
+    @media (max-width: 768px) {
+      .row.switch-xs {
+        transform: rotate(180deg);
+        direction: rtl;
+      }
+
+      @media (max-width: 768px) {
+        .col-centered {
+          display: inline-block;
+          float: none;
+          text-align: left;
+          margin-right: -4px;
+        }
+
+        .row-centered {
+          text-align: center;
+        }
+      }
+
+      .row.switch-xs>[class^="col-"] {
+        transform: rotate(-180deg);
+        direction: ltr;
+      }
+    }
+
+    body {
+      font-family: Helvetica, Arial;
+    }
+
+    table td {
+      vertical-align: top;
+    }
+
+    .table-fit {
+      white-space: nowrap;
+      width: 5%;
+    }
+
+    td {
+      padding-top: 2px;
+      padding-bottom: 2px;
+    }
+
+    th
+
+    /* CSS for sort indicator */
+    .sort-indicator::before {
+      content: "▼";
+      font-size: 0.8em;
+      padding-right: 5px;
+      color: #999;
+    }
+
+    .sort-indicator.asc::before {
+      content: "▲";
+    }
+
+    .sort-indicator.desc::before {
+      content: "▼";
+    }
+
+    .sort-indicator.clicked::before {
+      color: #333;
+    }
+
+    a {
+      color: blue;
+    }
+
+    .csr-barchart {
+      display: none;
+    }
+
+    .area_group_selector {
+      cursor: pointer;
+    }
+
+    .hovertip {
+      cursor: pointer;
+      color: blue
+    }
+
+    .bluefont {
+      color: blue;
+    }
+
+    input {
+      cursor: pointer;
+    }
+
+    /* latin-ext */
+    @font-face {
+      font-family: 'News Cycle';
+      font-style: normal;
+      font-weight: 400;
+      src: local('News Cycle'), local('NewsCycle'), url(https://fonts.gstatic.com/s/newscycle/v13/d03oiboZGiaNuMDvH253CgsYbbCjybiHxArTLjt7FRU.woff2) format('woff2');
+      unicode-range: U+0100-024F, U+1E00-1EFF, U+20A0-20AB, U+20AD-20CF, U+2C60-2C7F, U+A720-A7FF;
+    }
+
+    /* latin */
+    @font-face {
+      font-family: 'News Cycle';
+      font-style: normal;
+      font-weight: 400;
+      src: local('News Cycle'), local('NewsCycle'), url(https://fonts.gstatic.com/s/newscycle/v13/9Xe8dq6pQDsPyVH2D3tMQgzyDMXhdD8sAj6OAJTFsBI.woff2) format('woff2');
+      unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2212, U+2215;
+    }
+
+    /* latin-ext */
+    @font-face {
+      font-family: 'News Cycle';
+      font-style: normal;
+      font-weight: 700;
+      src: local('News Cycle Bold'), local('NewsCycle-Bold'), url(https://fonts.gstatic.com/s/newscycle/v13/G28Ny31cr5orMqEQy6ljtzrEaqfC9P2pvLXik1Kbr9s.woff2) format('woff2');
+      unicode-range: U+0100-024F, U+1E00-1EFF, U+20A0-20AB, U+20AD-20CF, U+2C60-2C7F, U+A720-A7FF;
+    }
+
+    /* latin */
+    @font-face {
+      font-family: 'News Cycle';
+      font-style: normal;
+      font-weight: 700;
+      src: local('News Cycle Bold'), local('NewsCycle-Bold'), url(https://fonts.gstatic.com/s/newscycle/v13/G28Ny31cr5orMqEQy6ljt2aVI6zN22yiurzcBKxPjFE.woff2) format('woff2');
+      unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2212, U+2215;
+    }
+
+    .note {
+      font-weight: bold;
+    }
+
+    .areaname {
+      font-variant: small-caps;
+      font-size: -1;
+    }
+
+    .barchart {
+      font-size: +1;
+    }
+  </style>
+  <script defer>
+    var trackOutboundLink = function (url, new_window) {
+      /* Setting a default value for backward compatibility */
+      if (new_window === undefined) {
+        new_window = false;
+      }
+      ga('send', 'event', 'outbound', 'click', url, {
+        'transport': 'beacon',
+        'hitCallback':
+          function () {
+            if (!new_window) {
+              document.location = url;
+            }
+          }
+      });
+      if (new_window) {
+        window.open(url);
+      }
+    }
+  </script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.4/jquery.js" type="text/javascript"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-csv/1.0.21/jquery.csv.js" type="text/javascript"></script>
+  <script defer src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.2.3/js/bootstrap.min.js"
+    type="text/javascript"></script>
+  <script src="https://code.iconify.design/3/3.1.0/iconify.min.js"></script>
+
+  <script defer src="js/csphdfellowships.js" type="text/javascript"></script>
+  <!-- verified icon -->
+  <!--<iconify-icon icon="material-symbols:verified-rounded" style="color: #0197f6;" width="24"></iconify-icon>-->
+
+  <!-- Google tag (gtag.js) -->
+<!--   <script async src="https://www.googletagmanager.com/gtag/js?id=G-TMFP7XV9R8"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+    gtag('config', 'G-TMFP7XV9R8');
+  </script> -->
+
+</head>
+
+<body>
+  <div class="overlay" id="overlay-loading">
+    <div class="centerscreen overlaytext">
+      <center>
+        <font color="white" size="15vw">
+          <div id="progress">Loading...<br /></div>
+        </font>
+      </center>
+    </div>
+  </div>
+
+  <div class="container">
+    <form id="rankform" name="rankform">
+      <div class="page-header">
+
+        <h1>CSPhDFellowships: PhD Fellowships</h1>
+
+        <div class="panel panel-info">
+          <div class="panel-heading">
+            <p>
+              CSPhdFellowships is a collection of fellowships available to Computer Science Graduate/Doctoral/Ph.D. students across the globe.
+              Everyone including industry and funding agencies are welcome to contribute!
+              For a real academic ranking, please refer to <a href="https://csrankings.org/" target="_blank">CSRankings</a>. For PhD Stipend ranking in the US, please refer to <a href="https://csstipendrankings.org/" target="_blank">CSStipendRankings</a>.
+            </p>
+            <b>
+              We hope you find CSPhdFellowships useful towards finding PhD Fellowships and wish you the best for your applications.
+            </b>
+            </p>
+            <p>
+              <b>To raise issues/comments</b>: We believe issues and comments should be discussed and resolved publicly on GitHub for transparency. 
+               If you believe any data is inaccurate or have additional comments, please open an <a href="https://github.com/csphdfellowships/csphdfellowships/issues/new/choose" target="_blank">issue</a> or a <a href="https://github.com/csphdfellowships/csphdfellowships/pulls" target="_blank">pull request</a>.
+               The maintainers will <i>not</i> respond to private messages sent to their personal or university accounts regarding this website.
+              </b>
+            </p>
+          </div>
+        </div>
+
+        <br>
+        <div class="row switch-xs row-centered">
+
+          <!-- start ranking window -->
+
+          <div class="col-xs-12 col-sm-push-12 col-sm-12 col-md-12 col-lg-12 text-center">
+            <div id="success">
+              <table class="table table-fit table-sm table-striped center" id="ranking" valign="top">
+                <thead>
+                  <tr>
+                    <th align="left">
+                      <font color="#777">#</font>
+                      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    </th>
+                    <th align="left">
+                      <font color="#777">Fellowship</font>
+                      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    </th>
+                    <th data-column="Link" align="left">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                        <font color="#777">Link to Fellowship</font>
+                    </th>
+                    <th data-column="country" align="left">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                        <font color="#777">Country (if restricted)</font>
+                    </th>
+                    <th data-column="amount" align="right">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                        <font color="#777">Fellowship Amount</font>
+                    </th>
+                    <th data-column="deadline" align="left">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                        <font color="#777">Deadline (mm-dd-yy)</font>
+                    </th>
+                    <th data-column="organization" align="left">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                        <font color="#777">Organization Name</font>
+                    </th>
+                    <th data-column="type" align="left">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                        <font color="#777">Category</font>
+                    </th>
+                    <th data-column="citizenship" align="left">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                        <font color="#777">Citizenship (if restricted)</font>
+                    </th>
+                  </tr>
+                </thead>
+                <tbody>
+                </tbody>
+
+              </table>
+            </div>
+          </div>
+
+          <!-- end ranking window -->
+
+
+        </div>
+
+    <!--
+    <div class="page-footer">
+        For the following universities, we have noticed fundamentally different data from different sources. These universities are temporarily removed from the ranking, and will be added back once enough data is collected. If you are a PhD student of these universities, please fill the corresponding survey and help us collect the data.
+        <ul>
+        </ul>
+    </div>
+    -->
+      </div>
+      <div>
+
+        <div class="page-footer">
+<!--           <p>
+            This ranking is part informational and part satire, designed to democratize information on how PhD students
+            in
+            computer science and related areas are paid for their labor &ndash; <i>inadequately</i>, in most cases.
+          </p> -->
+          <p>
+            Most of the code of this website is from <a href="https://csrankings.org/"
+              style="color:inherit; text-decoration: underline;" target="_blank">CSRankings</a> and <a href="https://csstipendrankings.org/"
+              style="color:inherit; text-decoration: underline;" target="_blank">CSStipendRankings</a>,
+            and we intentionally used the same template. The code of this website can be found at
+            <a
+              href="https://github.com/csphdfellowships/csphdfellowships" target="_blank">https://github.com/csphdfellowships/csphdfellowships</a>,
+            and the data presented can be found as a CSV file <a
+              href="https://github.com/csphdfellowships/csphdfellowships/blob/main/fellowships.csv" target="_blank">here</a>.
+          </p>
+          <p>
+            <b>Contributing:</b> Everyone is welcomed to submit patches or report the fellowships via <a
+              href="https://github.com/csphdfellowships/csphdfellowships/pulls" target="_blank">pull requests</a>.
+            Another option to submit valuable datapoints is through <a href="https://forms.gle/vvbjCBF28vRfiNQQ8" target="_blank">this
+              Google Form</a>.
+            Also, feel free to submit <a
+              href="https://github.com/csphdfellowships/csphdfellowships/issues/new/choose" target="_blank">issues on GitHub</a>.
+          </p>
+          <p>
+            <b>Frequent-Asked Questions:</b> Please see FAQs <a href="/faq.html" target="_blank">here</a>.
+          </p>
+    <p>
+      <a id="disclaimer" style="color:inherit"><b>Disclaimer:</b> </a>
+        CSPhdFellowships provides a collection of fellowships available to Computer Science Graduate/Doctoral/Ph.D. students across the globe., based on user-submitted information.
+        We try our best to verify their accuracy, but we cannot guarantee they are correct or up-to-date. Ultimately, while we hope you find this information useful, <em>this should not be used as the primary basis for grad school decisions</em>. 
+      We advocate users to do their own research before making life decisions.
+    </p>
+  
+    <p class="text-muted"><small>THIS SOFTWARE AND INFORMATION IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS “AS IS” AND
+      ANY EXPRESS OR IMPLIED WARRANTIES,
+      INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE
+      DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT HOLDER OR CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL,
+      SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR
+      SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY,
+      WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE
+      OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.</small>
+    </p>
+          <p class="text-muted">
+            <span xmlns:dct="https://dublincore.org/specifications/dublin-core/dcmi-terms/"
+              property="dct:title">csphdfellowships</span> is licensed under a <a rel="license"
+              href="https://creativecommons.org/licenses/by-nc-nd/4.0/"
+              style="color:inherit; text-decoration: underline;" target="_blank">Creative Commons
+              Attribution-NonCommercial-NoDerivatives 4.0 International License</a>.
+            This website is based on code licensed from CSRankings, a work at <a
+              xmlns:dct="https://dublincore.org/specifications/dublin-core/dcmi-terms/"
+              href="https://github.com/emeryberger/CSrankings" rel="dct:source"
+              style="color:inherit; text-decoration: underline;" target="_blank">https://github.com/emeryberger/CSrankings</a> and CSStipendRankings, a work at <a
+              xmlns:dct="https://dublincore.org/specifications/dublin-core/dcmi-terms/"
+              href="https://github.com/CSStipendRankings/CSStipendRankings" rel="dct:source"
+              style="color:inherit; text-decoration: underline;" target="_blank">.
+            The copyright of CSRankings is owned by <a href="https://emeryberger.com/"
+              style="color:inherit; text-decoration: underline;" target="_blank">Emery Berger</a>.
+             The copyright of CSStipendRankings is owned by <a href="https://github.com/CSStipendRankings/CSStipendRankings/contributors"
+              style="color:inherit; text-decoration: underline;" target="_blank"> CSStipendRankings contributors</a>.
+            The copyright of the non-CSRankings and non-CSStipendRankings part of csphdfellowships is owned by its
+            <a href="https://github.com/csphdfellowships/csphdfellowships/contributors"
+              style="color:inherit; text-decoration: underline;" target="_blank">contributors</a>.
+            <br />
+          </p>
+        </div>
+      </div>
+    </form>
+  </div>
+</body>
+
+</html>
