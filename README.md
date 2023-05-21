@@ -13,7 +13,7 @@
 #### Option 1
 The fastest way to add or update the data is by **editing** [`fellowships.csv`](https://csphdfellowships/csphdfellowships.github.io/edit/main/fellowships.csv) and submit a pull request. The fellowships data are stored as rows in `fellowships.csv` in the format of
 
-> ```"<Fellowship Name (Optional Notes)>", <Link To Fellowship>, <Fellowship Amount>, <Deadline>, <Name of the Funding Agency/Company/Organization>, <Industry or Funding Agency or Other>, <Citizenship Requirement>```
+> ```"<Fellowship Name (Optional Notes)>", <Link To Fellowship>, <Fellowship Amount>, <Deadline>, <Name of the Organization>, <University or Industry or Funding Agency or Other>, <Citizenship Requirement>```
 
 Please place the Fellowship name within `"`'s. 
 
