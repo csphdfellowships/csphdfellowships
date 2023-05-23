@@ -6,7 +6,7 @@ for (i = 0; i < data.length; i++) {
     data[i][1] = data[i][1] // link
     data[i][2] = data[i][2] // country
     data[i][3] = Number(data[i][3]) // fellowship amount
-    data[i][4] = Date(data[i][4]) // deadline
+    data[i][4] = data[i][4] // deadline
     data[i][5] = data[i][5] // organization name
     data[i][6] = data[i][6] // category
     data[i][7] = data[i][7] // citizenship
@@ -91,7 +91,7 @@ function get_values() {
             .append($("<td>").text(get_link(temp_data[i]).toLocaleString("en-US")))
             .append($("<td>").text(get_country(temp_data[i]).toLocaleString("en-US")))
             .append($("<td>").text(get_amount(temp_data[i]).toLocaleString("en-US")))
-            .append($("<td>").text(get_deadline(temp_data[i]).toLocaleString("en-US")))
+            .append($("<td>").text(new Date(get_deadline(temp_data[i]))))
             .append($("<td>").text(get_org(temp_data[i]).toLocaleString("en-US")))
             .append($("<td>").text(get_fellowship_type(temp_data[i]).toLocaleString("en-US")))
             .append($("<td>").text(get_citizenship(temp_data[i]).toLocaleString("en-US")))
