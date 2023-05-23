@@ -89,7 +89,7 @@ function get_values() {
         $("#ranking").find("tbody").append(
             $("<tr>")
             .append($("<td>").text(local_rank + 1))
-            .append($("<td>").text(get_fellowship(temp_data[i])).append(namefix2).append(fellowship_link))
+            .append($("<td>").text(get_fellowship(temp_data[i])).append(fellowship_link).append(namefix2))
             //.append($("<td>").text(get_link(temp_data[i]).toLocaleString("en-US")).attr("align", "right"))
             .append($("<td>").text(get_country(temp_data[i]).toLocaleString("en-US")).attr("align", "right"))
             .append($("<td>").text(get_amount(temp_data[i]).toLocaleString("en-US")).attr("align", "right"))
