@@ -91,7 +91,7 @@ function get_values() {
             .append($("<td>").text(get_link(temp_data[i]).toLocaleString("en-US")))
             .append($("<td>").text(get_country(temp_data[i]).toLocaleString("en-US")))
             .append($("<td>").text(get_amount(temp_data[i]).toLocaleString("en-US")))
-            .append($("<td>").text(new Date(get_deadline(temp_data[i]))))
+            .append($("<td>").text(new Date(get_deadline(temp_data[i])).toDateString()))
             .append($("<td>").text(get_org(temp_data[i]).toLocaleString("en-US")))
             .append($("<td>").text(get_fellowship_type(temp_data[i]).toLocaleString("en-US")))
             .append($("<td>").text(get_citizenship(temp_data[i]).toLocaleString("en-US")))
