@@ -84,7 +84,7 @@ function get_values() {
 
     for (i = 0; i < temp_data.length; i++) {
         namefix2 = $("<span>").append("&nbsp;&nbsp;")
-        namefix2.prepend($("<a>").attr("href", get_link(temp_data[i])).attr("target", "_blank")
+        namefix2.prepend($("<a>").attr("href", get_link(temp_data[i])).attr("target", "_blank"))
         namefix2.prepend("&nbsp;")
         $("#ranking").find("tbody").append(
             $("<tr>")
