@@ -6,7 +6,7 @@ for (i = 0; i < data.length; i++) {
     data[i][1] = data[i][1] // link
     data[i][2] = data[i][2] // country
     data[i][3] = Number(data[i][3]) // fellowship amount
-    data[i][4] = Date(data[i][4]) // deadline
+    data[i][4] = Date(data[i][4]).toDateString() // deadline
     data[i][5] = data[i][5] // organization name
     data[i][6] = data[i][6] // category
     data[i][7] = data[i][7] // citizenship
@@ -44,41 +44,41 @@ function get_citizenship(arr) {
   return arr[7]
 }
 
-function get_col(arr, col) {
-    switch (col) {
-        case "Link":
-            return get_link(arr)
-        case "country":
-            return get_country(arr)
-        case "amount":
-            return get_amount(arr)
-        case "deadline":
-            return get_deadline(arr)
-        case "organization":
-            return get_org(arr)
-        case "type":
-            return get_fellowship_type(arr)
-        case "citizenship":
-            return get_citizenship(arr)
-    }
-}
+// function get_column(arr, col) {
+//     switch (col) {
+//         case "Link":
+//             return get_link(arr)
+//         case "country":
+//             return get_country(arr)
+//         case "amount":
+//             return get_amount(arr)
+//         case "deadline":
+//             return get_deadline(arr)
+//         case "organization":
+//             return get_org(arr)
+//         case "type":
+//             return get_fellowship_type(arr)
+//         case "citizenship":
+//             return get_citizenship(arr)
+//     }
+// }
 
-function get_column() {
+function get_values() {
     $("#ranking").find("tbody").html("")
 
-    temp_data_pre_filter = [];
+    temp_data = [];
     for (var i = 0; i < data.length; i++) {
-        temp_data_pre_filter.push(data[i]);
+        temp_data.push(data[i]);
     }
     
-    console.log(temp_data_pre_filter)
+    console.log(temp_data)
 
-    temp_data = []
-    for (var i = 0; i < temp_data_pre_filter.length; i++) {
-        if (!isNaN(get_col(temp_data_pre_filter[i], col))) {
-            temp_data.push(temp_data_pre_filter[i]);
-        }
-    }
+//     temp_data = []
+//     for (var i = 0; i < temp_data_pre_filter.length; i++) {
+//         if (!isNaN(get_column(temp_data_pre_filter[i], col))) {
+//             temp_data.push(temp_data_pre_filter[i]);
+//         }
+//     }
 
     local_rank = 0
 
@@ -103,5 +103,5 @@ function get_column() {
 $("#overlay-loading").hide()
 
 $("#rankform").ready(function() {
-    get_column();
+    get_values();
 })
