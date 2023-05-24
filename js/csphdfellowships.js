@@ -5,7 +5,7 @@ console.log(data)
 for (i = 0; i < data.length; i++) {
     data[i][1] = data[i][1] // link
     data[i][2] = data[i][2] // country
-    data[i][3] = Number(data[i][3]) // fellowship amount
+    data[i][3] = data[i][3] // fellowship amount
     data[i][4] = data[i][4] // deadline
     data[i][5] = data[i][5] // organization name
     data[i][6] = data[i][6] // category
