@@ -1,6 +1,7 @@
 ![csphdfellowships](https://cronitor.io/badges/eLI0Mf/production/LaojZVocKAySVcmnuU6xD3ZmWJ0.svg)
 ![[](https://img.shields.io/twitter/url?style=social&url=https%3A%2F%2Fcsphdfellowships.org)](https://img.shields.io/twitter/url?style=social&url=https%3A%2F%2Fcsphdfellowships.org)
 ![[](https://img.shields.io/github/milestones/open/csphdfellowships/csphdfellowships)](https://img.shields.io/github/milestones/open/csphdfellowships/csphdfellowships)
+[![](https://img.shields.io/static/v1?label=Sponsor&message=%E2%9D%A4&logo=GitHub&color=%23fe8e86)](https://github.com/sponsors/csphdfellowships)
 
 # CSPhdFellowships
 
